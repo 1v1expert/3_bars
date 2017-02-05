@@ -1,5 +1,5 @@
 import json
-from math import *
+import math
 
 def load_data(filepath):
     myfile = open(filepath, mode = 'r', encoding = 'cp1251')
@@ -15,7 +15,7 @@ def get_smallest_bar(data):
 
 
 def get_closest_bar(data, longitude, latitude):
-    dist = lambda x: sqrt((float(x['Longitude_WGS84'])-longitude)**2 + (float(x['Latitude_WGS84'])-latitude)**2)
+    dist = lambda x: math.sqrt((float(x['Longitude_WGS84'])-longitude)**2 + (float(x['Latitude_WGS84'])-latitude)**2)
     return min(data, key = dist)
 
 def get_info_bars(data):
