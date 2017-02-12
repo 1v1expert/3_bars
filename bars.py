@@ -18,7 +18,7 @@ def get_closest_bar(data, longitude, latitude):
     dist = lambda x: math.sqrt((float(x['Longitude_WGS84'])-longitude)**2 + (float(x['Latitude_WGS84'])-latitude)**2)
     return min(data, key = dist)
 
-def get_info_bars(data):
+def allow_info_bars(data):
     print("Name: ", data['Name'])
     print("Seats Count: ", data['SeatsCount'])
     print("Coordinates", data['Latitude_WGS84'], data['Longitude_WGS84'])
